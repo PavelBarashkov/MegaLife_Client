@@ -1,0 +1,50 @@
+.container {
+    width: 100%;
+    position: relative;
+}
+
+.btn {
+    position: absolute;
+    right: 15px;
+
+    border: none;
+    background: none;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+}
+.btn_password {
+    position: absolute;
+    right: 45px;
+
+    border: none;
+    background: none;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+}
+
+.btn_Question {
+    position: absolute;
+    right: 16px;
+
+    border: none;
+    background: none;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}

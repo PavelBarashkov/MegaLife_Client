@@ -1,0 +1,31 @@
+.myBtn {
+    width: 100%;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    
+    border-radius: 10px;
+    border: none;
+
+    background-color: rgba(176, 102, 255, 1);
+    color: white;
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+
+.myBtn:hover {
+    background-color: rgba(191, 131, 255, 1);
+}
+
+.myBtn:active {
+    background-color: rgba(136, 77, 199, 1);
+}
+
+.myBtn:disabled {
+    background-color: white;
+    border: 2px solid rgba(176, 102, 255, 1);
+    color: rgba(176, 102, 255, 1);
+    font-weight: 600;
+    cursor: default;
+}

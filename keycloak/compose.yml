@@ -1,0 +1,56 @@
+version: "3.9"
+
+services:
+
+  postgres:
+    container_name: postgres
+    image: postgres:15.4-bullseye
+    volumes:
+      - megalife-auth-db:/var/lib/postgresql/data/:rw
+      - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d/:ro
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+    restart: unless-stopped
+
+
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4:7.6
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=${PGADMIN_MAIL}
+      - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_PASSWORD}
+    ports:
+      - 5050:80
+    restart: unless-stopped
+    volumes:
+      - megalife-auth-pgadmin:/var/lib/pgadmin:rw
+
+
+  keycloak:
+    container_name: keycloak
+    image: quay.io/keycloak/keycloak:22.0.1
+    environment:
+      - KEYCLOAK_ADMIN=${KEYCLOAK_ADMIN}
+      - KEYCLOAK_ADMIN_PASSWORD=${KEYCLOAK_ADMIN_PASSWORD}
+      - KC_DEBUG=true
+      - KC_DEBUG_PORT='*:8787'
+      - KC_DB=postgres
+      - KC_DB_URL_HOST=postgres
+      - KC_DB_URL_PORT=5432
+      - KC_DB_DATABASE=${POSTGRES_DB}
+      - KC_DB_USERNAME=${POSTGRES_USER}
+      - KC_DB_PASSWORD=${POSTGRES_PASSWORD}
+    ports:
+      - 8080:8080
+      - 8787:8787 # debug port
+    command: start-dev
+    depends_on:
+      - postgres
+    restart: unless-stopped
+
+
+volumes:
+  megalife-auth-db:
+  megalife-auth-pgadmin:

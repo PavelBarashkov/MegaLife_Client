@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    column-gap: 10px;
+
+    margin-top: -6px;
+    width: 100%;
+}
+
+.error {
+    align-items: flex-start;
+    display: flex;
+    column-gap: 6px;
+    max-width: 150px;
+
+    font-size: 12px;
+    color: rgba(255, 78, 100, 1);
+}
