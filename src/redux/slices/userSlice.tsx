@@ -11,7 +11,7 @@ export interface IUserState {
         email: string,
         password: string,
         registrationDate: string,
-        first_entry: boolean,
+        first_entry: boolean
         iat: string,
         exp: string,
         roleId: number | undefined

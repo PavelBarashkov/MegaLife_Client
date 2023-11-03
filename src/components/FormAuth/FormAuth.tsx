@@ -16,12 +16,24 @@ import { Service } from '../../API/ServiceAPI/Service';
 import jwtDecode from 'jwt-decode';
 import { useNavigate } from 'react-router-dom';
 import { FIRST_LOGIN_ROUTE, HOME_ROUTE, PASWORD_RESET_ROUTE } from '../../routes/consts';
-import { setUser } from '../../redux/slices/userSlice';
+import { setUser, userAuth } from '../../redux/slices/userSlice';
 import { useSelector } from 'react-redux';
 import { InputWithBtn } from '../InputWithBtnBloor/InputWithBtn';
 import { login } from '../../API/UserAPI/userAPI';
+import { authUser } from '../../redux/slices/formSlice';
 
-
+interface Iuser {
+    isAuth: boolean
+    id: string,
+    name: string,
+    email: string,
+    password: string,
+    registrationDate: string,
+    first_entry: boolean,
+    iat: string,
+    exp: string,
+    roleId: number | undefined
+}
 
 export const FormAuth = () => {
     const navigat = useNavigate()
@@ -64,21 +76,20 @@ export const FormAuth = () => {
     const [fetchUser, isUserInfoLoading, userInfoError] = useFetching(async (email: string, password: string)  => {
             const response = await login(email, password)
             .then(data => {
-                console.log(data)
+                const test: Iuser = jwtDecode(data.data?.data?.token)
+                if(test?.first_entry) {
+                    navigat(FIRST_LOGIN_ROUTE)
+                } else {
+                    navigat(HOME_ROUTE)
+                }
                 dispatch(setUser(jwtDecode(data.data?.data?.token)))
             })
             .catch(data => {
                 form.error = data.response.data.message
             })
+            console.log(response)
     })
-    useEffect(() => {
-        if (user.first_entry) {
-            navigat(FIRST_LOGIN_ROUTE)
-        } 
-        navigat(HOME_ROUTE)
-    }, [user])
 
-   
   return (
         <Form>
             <Logo/>
@@ -118,7 +129,7 @@ export const FormAuth = () => {
                 type="submit" 
                 onClick={(e:  React.MouseEvent<HTMLButtonElement>) => {
                     e.preventDefault();
-                    handlerFrom(form, setForm)
+                    handlerFrom(form, setForm);
                     if (form.login.valid && form.password.valid) {
                         fetchUser(form.login.value, form.password.value)
                     }}}
