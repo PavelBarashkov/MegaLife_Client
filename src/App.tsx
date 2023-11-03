@@ -17,7 +17,7 @@ function App() {
         check().then(data => {
             dispatch(isAuth());
         })
-        .catch((error) => console.log(error))
+        .catch((error) => console.log(error.response.data.message))
         .finally(() => setLoading(false))
     }, [])
 
