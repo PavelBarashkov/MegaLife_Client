@@ -12,15 +12,13 @@ import { MyButton } from '../UI/myButton/MyButton';
 import { handlerFrom } from '../utils/form-handlers/handlerFrom';
 import { IForm, IUserState } from '../../models/state/FormAuth';
 import { useFetching } from '../../customHooks/useFetching';
-import { Service } from '../../API/ServiceAPI/Service';
 import jwtDecode from 'jwt-decode';
 import { useNavigate } from 'react-router-dom';
 import { FIRST_LOGIN_ROUTE, HOME_ROUTE, PASWORD_RESET_ROUTE } from '../../routes/consts';
-import { setUser, userAuth } from '../../redux/slices/userSlice';
+import { setUser } from '../../redux/slices/userSlice';
 import { useSelector } from 'react-redux';
 import { InputWithBtn } from '../InputWithBtnBloor/InputWithBtn';
 import { login } from '../../API/UserAPI/userAPI';
-import { authUser } from '../../redux/slices/formSlice';
 
 interface Iuser {
     isAuth: boolean
