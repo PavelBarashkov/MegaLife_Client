@@ -77,9 +77,11 @@ export const FormAuth = () => {
             const response = await login(email, password)
             .then(data => {
                 const test: Iuser = jwtDecode(data.data?.data?.token)
+                console.log(test)
                 if(test?.first_entry) {
                     navigat(FIRST_LOGIN_ROUTE)
-                } else {
+                } 
+                else {
                     navigat(HOME_ROUTE)
                 }
                 dispatch(setUser(jwtDecode(data.data?.data?.token)))
@@ -87,7 +89,6 @@ export const FormAuth = () => {
             .catch(data => {
                 form.error = data.response.data.message
             })
-            console.log(response)
     })
 
   return (

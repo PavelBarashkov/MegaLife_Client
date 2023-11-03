@@ -7,7 +7,7 @@ export class Service {
     }
 
     static async firstEntry(id: number, password: string) {
-        const response = await axios.put(`http://localhost:5000/api/user/${id}`, { password});
+        const response = await axios.put(`${process.env.REACT_APP_API_URL}/api/user/${id}`, {password});
         return response;
     }
 
