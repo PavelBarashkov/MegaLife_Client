@@ -1,11 +1,8 @@
-import React, { createRef, useEffect, useState } from 'react';
-import { MyInput } from '../UI/MyInput/myInput';
+import { createRef, useEffect, useState } from 'react';
 import { BtnBloor } from '../BtnBloor';
-import { useAppDispatch } from '../../redux/hooks/hooks';
-import { resetError, updatatypePassword, updatpasswordValue } from '../../redux/slices/formSlice';
 import classesInputWithBloor from './InputWithBtnBloor.module.css';
-import { IconQuestion } from '../UI/iconQuestion/IconQuestion';
 import { ClueElement } from '../UI/ClueElement/ClueElement';
+
 interface IInputWithBtnProps {
     valid?: boolean | null;
     type_input: string;
