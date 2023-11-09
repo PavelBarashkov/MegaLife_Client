@@ -14,7 +14,7 @@ import { IForm, IUserState } from '../../models/state/FormAuth';
 import { useFetching } from '../../customHooks/useFetching';
 import jwtDecode from 'jwt-decode';
 import { useNavigate } from 'react-router-dom';
-import { FIRST_LOGIN_ROUTE, HOME_ROUTE, PASWORD_RESET_ROUTE } from '../../routes/consts';
+import { FIRST_LOGIN_ROUTE, ACCOUNTS_ROUTE, PASWORD_RESET_ROUTE } from '../../routes/consts';
 import { setUser } from '../../redux/slices/userSlice';
 import { useSelector } from 'react-redux';
 import { InputWithBtn } from '../InputWithBtnBloor/InputWithBtn';
@@ -80,7 +80,7 @@ export const FormAuth = () => {
                     navigat(FIRST_LOGIN_ROUTE)
                 } 
                 else {
-                    navigat(HOME_ROUTE)
+                    navigat(ACCOUNTS_ROUTE)
                 }
                 dispatch(setUser(jwtDecode(data.data?.data?.token)))
             })

@@ -16,7 +16,7 @@ import { useFetching } from '../../customHooks/useFetching';
 import { Service } from '../../API/ServiceAPI/Service';
 import jwtDecode from 'jwt-decode';
 import { useNavigate } from 'react-router-dom';
-import { FIRST_LOGIN_ROUTE, HOME_ROUTE, LOGIN_ROUTE } from '../../routes/consts';
+import { FIRST_LOGIN_ROUTE, ACCOUNTS_ROUTE, LOGIN_ROUTE } from '../../routes/consts';
 import { setUser } from '../../redux/slices/userSlice';
 import { useSelector } from 'react-redux';
 import { IFormFirstEntry } from '../../models/state/formFirstEntry';
@@ -89,7 +89,7 @@ export const FormFitrstEntry = () => {
             <Form>
             <Logo/>
             <TitileForm> Пароль успешно создан! </TitileForm>
-            <MyButton onClick={() => navigat(HOME_ROUTE)}>Войти</MyButton>
+            <MyButton onClick={() => navigat(ACCOUNTS_ROUTE)}>Войти</MyButton>
             </Form>
         ):(
             <Form>

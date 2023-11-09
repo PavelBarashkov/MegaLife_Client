@@ -1,6 +1,6 @@
-import { FIRST_LOGIN_ROUTE, HOME_ROUTE, LOGIN_ROUTE, NEW_PASSWORD_ROUTE, PASWORD_RESET_ROUTE } from "./consts";
+import { ACCOUNTS_ROUTE, FIRST_LOGIN_ROUTE, LOGIN_ROUTE, NEW_PASSWORD_ROUTE, PASWORD_RESET_ROUTE } from "./consts";
 import { Auth } from "../pages/Auth";
-import { Home } from "../pages/Home";
+import { Accounts } from "../pages/Accounts";
 import { FirstEntry } from "../pages/FirstEntry";
 import { PasswordReset } from "../pages/PasswordReset";
 import { NewPassword } from "../pages/NewPassword";
@@ -12,8 +12,8 @@ interface Path {
 
 export const authRoutes: Path[] = [ 
     {
-        path: HOME_ROUTE,
-        element: <Home/>,
+        path: ACCOUNTS_ROUTE,
+        element: <Accounts/>,
     },
     {
         path: FIRST_LOGIN_ROUTE,

@@ -70,3 +70,6 @@
     text-decoration: none;
     cursor: pointer;
 }
+.header-menu {
+    column-gap: 4px;
+}
