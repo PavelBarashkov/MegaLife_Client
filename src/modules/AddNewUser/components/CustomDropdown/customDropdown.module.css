@@ -1,0 +1,77 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+
+    padding-bottom: 24px;
+
+    border-bottom: 1px solid rgba(234, 236, 240, 1);
+}
+
+.label {
+    font-size: 14px;
+
+    color: rgba(102, 112, 133, 1);
+}
+
+.dropdown {
+    width: 384px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    padding: 12px;
+
+    color: rgba(99, 105, 128, 1);
+
+    background-color: rgba(255, 255, 255, 1);
+    
+    border: 1px solid rgba(198, 198, 201, 1);
+
+    --bs-btn-active-bg: rgba(255, 255, 255, 1);
+    --bs-btn-color: rgba(99, 105, 128, 1);
+    --bs-btn-border-color: rgba(136, 96, 255, 1);
+    --bs-btn-active-color: rgba(99, 105, 128, 1);
+    --bs-btn-active-border-color: rgba(136, 96, 255, 1);
+}
+
+.btn:hover {
+    color: rgba(99, 105, 128, 1);
+
+    background-color: rgba(255, 255, 255, 1);
+
+    border-color: rgba(136, 96, 255, 1);
+}
+
+.btn:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
+    color: rgba(99, 105, 128, 1);
+
+    background-color: rgba(255, 255, 255, 1);
+
+    border-color: rgba(136, 96, 255, 1);
+}
+
+
+.btn::after {
+    content: none;
+}
+
+.menu {
+    width: 100%;
+}
+
+.item {
+    font-size: 16px;
+
+    color: rgba(102, 112, 133, 1);
+}
+
+.item:hover {
+    color: rgba(102, 112, 133, 1);
+}
+

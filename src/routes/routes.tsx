@@ -4,7 +4,7 @@ import { Accounts } from "../pages/Accounts";
 import { FirstEntry } from "../pages/FirstEntry";
 import { PasswordReset } from "../pages/PasswordReset";
 import { NewPassword } from "../pages/NewPassword";
-import { AddNewUser } from "../pages/AddNewUser";
+import { CreateNewUser } from "../pages/CreateNewUser";
 
 interface Path {
     path: string
@@ -18,7 +18,7 @@ export const authRoutes: Path[] = [
     },
     {
         path: ADD_NEW_USER_ROUTE,
-        element: <AddNewUser/>,
+        element: <CreateNewUser/>,
     },
     {
         path: FIRST_LOGIN_ROUTE,

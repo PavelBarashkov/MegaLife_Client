@@ -1,10 +1,11 @@
 import React from 'react'
 import { Navigation } from '../modules/Navigation'
+import { AddNewUser } from '../modules/AddNewUser'
 
-export const AddNewUser = () => {
+export const CreateNewUser = () => {
   return (
     <Navigation>
-        <div>AddNewUser</div>
+        <AddNewUser/>
     </Navigation>
   )
 }

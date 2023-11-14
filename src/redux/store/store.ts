@@ -2,12 +2,14 @@ import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import userSlice from '../slices/userSlice';
 import formAuth from '../slices/formAuth';
 import usersSlice from '../../modules/AllAccounts/slice/usersSlice';
+import RolesSlice from '../../modules/AddNewUser/slices/RolesSlice';
 
 export const store = configureStore({
   reducer: {
     formAuth: formAuth,
     user: userSlice,
-    users: usersSlice
+    users: usersSlice,
+    roles: RolesSlice,
   },
 });
 
