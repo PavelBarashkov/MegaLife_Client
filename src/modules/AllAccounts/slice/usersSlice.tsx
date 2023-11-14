@@ -53,6 +53,9 @@ interface IUser {
         iat?: string,
         exp?: string,
         roleId?: number
+        role?: {
+            name?: string
+        }
 }
 export interface IUserState {
     users: IUser[], 

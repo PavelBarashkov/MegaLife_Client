@@ -12,7 +12,7 @@ export const RowIetmTable = ({user, handlModal}: any) => {
                 <td className={classes.body_text}>{user?.birthday}</td>
                 <td className={classes.body_text}>{user?.email}</td>
                 <td className={classes.body_text}>{user?.phone}</td>
-                <td className={classes.body_text}>{user?.role}</td>
+                <td className={classes.body_text}>{user?.role?.name}</td>
                 <td>
                     <Dropdown>
                         <Dropdown.Toggle variant="success" id="dropdown-basic">
