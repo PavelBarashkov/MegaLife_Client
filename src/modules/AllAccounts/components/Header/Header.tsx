@@ -10,7 +10,9 @@ export const Header = () => {
     <div className={classes.container}>
         <Title title={'Учетне записи'}/>
         <div className={classes.btn_and_search}>
-            <Btn icon={plus}>Новая учетная запись</Btn>
+            <div>
+                <Btn icon={plus}>Новая учетная запись</Btn>
+            </div>
             <input type="text" placeholder='тут будет поиск'/>
         </div>
     </div>

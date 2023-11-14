@@ -1,0 +1,23 @@
+.container {
+    border-radius: 16px;
+    border: 1px solid rgba(234, 236, 240, 1);
+}
+
+.table {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.header {
+    background-color: rgba(245, 247, 254, 1);
+}
+
+.title {
+    padding: 12px;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(102, 112, 133, 1);
+    height: 80px;
+}
+

@@ -4,9 +4,10 @@ import classes from "./btn.module.css"
 interface IBtnProps {
     children: React.ReactNode
     icon?: string
+    onClick?:() => void
 }
 
-export const Btn = ({ children, icon, ...props }: IBtnProps) => {
+export const Btn = ({ children, icon,onClick, ...props }: IBtnProps) => {
 
     if (icon) {
         return (
@@ -26,6 +27,7 @@ export const Btn = ({ children, icon, ...props }: IBtnProps) => {
         <button  
             {...props} 
             className={classes.btn}
+            onClick={onClick}
         >
             {children}
         </button>
