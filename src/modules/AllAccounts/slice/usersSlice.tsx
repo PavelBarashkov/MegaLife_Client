@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { getUsersAdmin } from '../../API/getUsersAdmin';
-import { deleteUserAdmin } from '../../API/deleteUserAdmin';
+import { getUsersAdmin } from '../API/getUsersAdmin';
+import { deleteUserAdmin } from '../API/deleteUserAdmin';
 
 
 interface GetUsersParams {
@@ -53,6 +53,9 @@ interface IUser {
         iat?: string,
         exp?: string,
         roleId?: number
+        role?: {
+            name?: string
+        }
 }
 export interface IUserState {
     users: IUser[], 
