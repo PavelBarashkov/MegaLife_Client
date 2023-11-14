@@ -13,6 +13,7 @@ export const Btn = ({ children, icon,onClick, ...props }: IBtnProps) => {
         return (
             <button  
             {...props} 
+            onClick={onClick}
             className={classes.btn}
         >
             <div className={classes.btn_container}>

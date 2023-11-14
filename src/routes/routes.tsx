@@ -1,9 +1,10 @@
-import { ACCOUNTS_ROUTE, FIRST_LOGIN_ROUTE, LOGIN_ROUTE, NEW_PASSWORD_ROUTE, PASWORD_RESET_ROUTE } from "./consts";
+import { ACCOUNTS_ROUTE, ADD_NEW_USER_ROUTE, FIRST_LOGIN_ROUTE, LOGIN_ROUTE, NEW_PASSWORD_ROUTE, PASWORD_RESET_ROUTE } from "./consts";
 import { Auth } from "../pages/Auth";
 import { Accounts } from "../pages/Accounts";
 import { FirstEntry } from "../pages/FirstEntry";
 import { PasswordReset } from "../pages/PasswordReset";
 import { NewPassword } from "../pages/NewPassword";
+import { AddNewUser } from "../pages/AddNewUser";
 
 interface Path {
     path: string
@@ -14,6 +15,10 @@ export const authRoutes: Path[] = [
     {
         path: ACCOUNTS_ROUTE,
         element: <Accounts/>,
+    },
+    {
+        path: ADD_NEW_USER_ROUTE,
+        element: <AddNewUser/>,
     },
     {
         path: FIRST_LOGIN_ROUTE,
