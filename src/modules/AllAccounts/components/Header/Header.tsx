@@ -14,7 +14,7 @@ export const Header = () => {
     }
     return (
         <div className={classes.container}>
-            <Title title={'Учетне записи'}/>
+            <Title title={'Учетные записи'}/>
             <div className={classes.btn_and_search}>
                 <div>
                     <Btn onClick={handleBtn} icon={plus}>Новая учетная запись</Btn>
