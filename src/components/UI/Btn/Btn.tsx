@@ -7,7 +7,7 @@ interface IBtnProps {
     onClick?:() => void
 }
 
-export const Btn = ({ children, icon,onClick, ...props }: IBtnProps) => {
+export const Btn = ({ children, icon, onClick, ...props }: IBtnProps) => {
 
     if (icon) {
         return (

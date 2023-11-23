@@ -5,7 +5,7 @@
 
     padding-bottom: 24px;
 
-    border-bottom: 1px solid rgba(234, 236, 240, 1);
+    
 }
 
 .label {
@@ -31,7 +31,7 @@
 
     background-color: rgba(255, 255, 255, 1);
     
-    border: 1px solid rgba(198, 198, 201, 1);
+    border: 1px solid rgba(185, 185, 185, 1);
 
     --bs-btn-active-bg: rgba(255, 255, 255, 1);
     --bs-btn-color: rgba(99, 105, 128, 1);

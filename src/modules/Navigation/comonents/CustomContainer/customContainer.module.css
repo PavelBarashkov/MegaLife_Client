@@ -20,7 +20,7 @@
 
 .main_section {
     width: 100%;
-    height: calc(100vh - 84px);
+    height: calc(100% - 84px);
 
     padding: 40px;
 
