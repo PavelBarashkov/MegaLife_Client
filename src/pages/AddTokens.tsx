@@ -1,7 +1,11 @@
-import React from 'react'
+import React from "react";
+import { Navigation } from "../modules/Navigation";
+import { AddToken } from "../modules/AddToken";
 
 export const AddTokens = () => {
   return (
-    <div>AddTokens</div>
-  )
-}
+    <Navigation>
+      <AddToken />
+    </Navigation>
+  );
+};

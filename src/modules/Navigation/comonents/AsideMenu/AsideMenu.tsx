@@ -14,8 +14,8 @@ export const AsideMenu = () => {
         <div className={classes.title}>Меню администратора</div>
         <div className={classes.list_link}>
             <MyNavLink icon={user} href={'/accounts'} title='Учетные записи'/>
-            <MyNavLink  icon={star} href={'!#'} title='Начисление/списание умников'/>
-            <MyNavLink  icon={history } href={ADD_TOKENS} title='История начислений/списаний'/>
+            <MyNavLink  icon={star} href={ADD_TOKENS} title='Начисление/списание умников'/>
+            <MyNavLink  icon={history } href={'!#'} title='История начислений/списаний'/>
         </div>
         
     </nav>

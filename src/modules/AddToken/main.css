@@ -1,0 +1,72 @@
+.MuiInputBase-root {
+  column-gap: 4px !important;
+  row-gap: 2px;
+
+  width: 384px !important;
+  padding: 11px 27px 11px 8px !important;
+
+  border: 1px solid rgba(185, 185, 185, 1) !important;
+  border-radius: 4px;
+}
+
+.MuiInputBase-root::before {
+  display: none;
+}
+
+.MuiInputBase-root::after {
+  display: none !important;
+}
+
+.tag {
+  display: flex;
+  align-items: center !important;
+  column-gap: 4px;
+
+  padding: 7px 4px 7px 8px !important;
+
+  color: rgba(136, 96, 255, 1) !important;
+
+  background-color: rgba(240, 239, 255, 1) !important;
+  border-radius: 2px !important;
+
+  font-size: 12px !important;
+}
+
+.tag:hover .delete-icon {
+  stroke: white !important;
+  color: #fff !important;
+  background-color: rgba(191, 131, 255, 1) !important;
+  transition: 0s;
+
+  cursor: pointer;
+}
+.tag:hover {
+  stroke: white !important;
+  color: #fff !important;
+  background-color: rgba(191, 131, 255, 1) !important;
+  transition: 0s;
+
+  cursor: pointer;
+}
+
+.MuiAutocomplete-endAdornment {
+  top: 12px !important;
+  right: 7px !important;
+}
+
+.MuiChip-label {
+  padding: 0 !important;
+}
+
+.MuiAutocomplete-option {
+  color: rgba(102, 112, 133, 1) !important;
+}
+
+.MuiAutocomplete-paper {
+  box-shadow: 0px 10px 20px 0px rgba(0, 18, 38, 0.05) !important;
+}
+
+.MuiAutocomplete-option:hover {
+  color: rgba(102, 112, 133, 1) !important;
+  background-color: rgba(240, 239, 255, 1) !important;
+}
