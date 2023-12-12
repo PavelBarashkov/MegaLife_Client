@@ -1,5 +1,5 @@
 import React from "react";
-import classes from './inputItem.module.css'
+import classes from "./inputItem.module.css";
 
 interface IInputItemProps {
   label: string;
@@ -9,8 +9,10 @@ interface IInputItemProps {
 export const InputItem = ({ label, children }: IInputItemProps) => {
   return (
     <>
-      <label className={classes.label}>{label}</label>
-      {children}
+      <div className={classes.container}>
+        <label className={classes.label}>{label}</label>
+        {children}
+      </div>
     </>
   );
 };
