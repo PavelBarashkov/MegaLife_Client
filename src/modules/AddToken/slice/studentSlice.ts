@@ -28,12 +28,14 @@ export interface IStudent {
 
 export interface IStudentsState {
   students: IStudent[];
+  selectedUsers: number[];
   loading: boolean;
   error: string;
 }
 
 const initialState = {
   students: [],
+  selectedUsers: [],
   loading: false,
   error: "",
 } as IStudentsState;
@@ -41,7 +43,11 @@ const initialState = {
 export const studentsSlice = createSlice({
   name: "Students",
   initialState,
-  reducers: {},
+  reducers: {
+    setSelectedUsers: (state, action) => {
+      state.selectedUsers = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getStudents.pending, (state) => {
@@ -58,6 +64,6 @@ export const studentsSlice = createSlice({
   },
 });
 
-export const {} = studentsSlice.actions;
+export const { setSelectedUsers } = studentsSlice.actions;
 
 export default studentsSlice.reducer;
