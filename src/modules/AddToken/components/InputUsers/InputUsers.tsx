@@ -7,9 +7,10 @@ import { DeleteIcon } from "../../assets/DeleteIcon";
 import { Arrowdown } from "../../assets/Arrowdown";
 import { ClearIcon } from "../../assets/ClearIcon";
 import "../../main.css";
+import { useSelector } from "react-redux";
+import { IStudent } from "../../slice/studentSlice";
 
-
-export const InputUsers = ({value, handlerInput}:any) => {
+export const InputUsers = ({ value, handlerInput }: any) => {
   const top100Films = [
     { title: "The Shawshank Redemption", year: 1994 },
     { title: "The Godfather", year: 1972 },
@@ -138,6 +139,7 @@ export const InputUsers = ({value, handlerInput}:any) => {
     { title: "Monty Python and the Holy Grail", year: 1975 },
   ];
 
+  const { students } = useSelector((state: any) => state.students);
   const func = (str: string) => {
     const words = str.split(" ");
 
@@ -157,29 +159,35 @@ export const InputUsers = ({value, handlerInput}:any) => {
       label={label}
     />
   );
+  console.log(students)
   return (
-    <Stack spacing={3} sx={{ width: 500 }}>
-      <Autocomplete
-      
-        multiple
-        popupIcon={<Arrowdown />}
-        clearIcon={<ClearIcon />}
-        // value={value}
-        onChange={e => console.log(e)}
-        id="tags-standard"
-        options={top100Films}
-        getOptionLabel={(option) => option.title}
-        renderTags={(value, getTagProps) =>
-          value.map((option, index) => (
-            <Tag {...getTagProps({ index })} label={func(option.title)} />
-          ))
-        }
-        renderInput={(params) => (
-          <>
-            <TextField {...params} variant="standard" placeholder="Выбрать" />
-          </>
-        )}
-      />
-    </Stack>
+    <>
+      {students && (
+        <Stack spacing={3} sx={{ width: 500 }}>
+          <Autocomplete
+            multiple
+            popupIcon={<Arrowdown />}
+            clearIcon={<ClearIcon />}
+            id="tags-standard"
+            options={students}
+            getOptionLabel={(option: IStudent) => option.name}
+            renderTags={(value, getTagProps) =>
+              value.map((option, index) => (
+                <Tag {...getTagProps({ index })} label={func(option.name)} />
+              ))
+            }
+            renderInput={(params) => (
+              <>
+                <TextField
+                  {...params}
+                  variant="standard"
+                  placeholder="Выбрать"
+                />
+              </>
+            )}
+          />
+        </Stack>
+      )}
+    </>
   );
 };

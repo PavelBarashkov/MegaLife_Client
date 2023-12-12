@@ -9,7 +9,7 @@ export const getStudents = createAsyncThunk(
   }
 );
 
-interface IStudent {
+export interface IStudent {
   id: number;
   name: string;
   email: string;
