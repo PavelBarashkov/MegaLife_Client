@@ -5,8 +5,11 @@
   width: 384px !important;
   padding: 11px 27px 11px 8px !important;
 
-  border: 1px solid rgba(185, 185, 185, 1) !important;
+  border: 1px solid rgba(185, 185, 185, 1);
   border-radius: 4px;
+}
+.Mui-focused {
+    border-color: rgba(136, 96, 255, 1);
 }
 
 .MuiInputBase-root::before {
@@ -70,3 +73,4 @@
   color: rgba(102, 112, 133, 1) !important;
   background-color: rgba(240, 239, 255, 1) !important;
 }
+

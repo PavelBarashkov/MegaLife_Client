@@ -29,6 +29,7 @@ export interface IStudent {
 export interface IStudentsState {
   students: IStudent[];
   selectedUsers: number[];
+  balance: number;
   loading: boolean;
   error: string;
 }
@@ -36,6 +37,7 @@ export interface IStudentsState {
 const initialState = {
   students: [],
   selectedUsers: [],
+  balance: 0,
   loading: false,
   error: "",
 } as IStudentsState;
@@ -47,6 +49,9 @@ export const studentsSlice = createSlice({
     setSelectedUsers: (state, action) => {
       state.selectedUsers = action.payload;
     },
+    setBalance: (state, action) => {
+        state.balance = Number(action.payload);
+    }
   },
   extraReducers: (builder) => {
     builder
@@ -64,6 +69,6 @@ export const studentsSlice = createSlice({
   },
 });
 
-export const { setSelectedUsers } = studentsSlice.actions;
+export const { setSelectedUsers, setBalance } = studentsSlice.actions;
 
 export default studentsSlice.reducer;

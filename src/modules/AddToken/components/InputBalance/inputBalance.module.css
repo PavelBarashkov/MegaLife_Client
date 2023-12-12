@@ -13,3 +13,7 @@
 .input:focus {
     border-color: rgba(136, 96, 255, 1);
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
