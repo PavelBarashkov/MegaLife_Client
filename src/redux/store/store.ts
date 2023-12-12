@@ -3,6 +3,7 @@ import userSlice from '../slices/userSlice';
 import formAuth from '../slices/formAuth';
 import usersSlice from '../../modules/AllAccounts/slice/usersSlice';
 import RolesSlice from '../../modules/AddNewUser/slices/RolesSlice';
+import { studentsSlice } from '../../modules/AddToken';
 
 export const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
     user: userSlice,
     users: usersSlice,
     roles: RolesSlice,
+    students: studentsSlice.reducer
   },
 });
 
