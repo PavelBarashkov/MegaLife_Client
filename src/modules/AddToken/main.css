@@ -9,7 +9,7 @@
   border-radius: 4px;
 }
 .Mui-focused {
-    border-color: rgba(136, 96, 255, 1);
+  border-color: rgba(136, 96, 255, 1);
 }
 
 .MuiInputBase-root::before {
@@ -73,4 +73,3 @@
   color: rgba(102, 112, 133, 1) !important;
   background-color: rgba(240, 239, 255, 1) !important;
 }
-
