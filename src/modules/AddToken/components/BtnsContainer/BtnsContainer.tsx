@@ -3,7 +3,7 @@ import { SubtractBtn } from "../SubtractBtn/SubtractBtn";
 import { Btn } from "../../../../components/UI/Btn/Btn";
 import classes from "./btnsContainer.module.css";
 import { useAppDispatch } from "../../../../redux/hooks/hooks";
-import { AddBalance } from "../../slice/studentSlice";
+import { AddBalance } from "../../slice/apiStudentSlice";
 import { useSelector } from "react-redux";
 
 export const BtnsContainer = () => {
