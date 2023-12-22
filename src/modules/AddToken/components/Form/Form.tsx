@@ -6,7 +6,7 @@ import { BtnsContainer } from "../BtnsContainer/BtnsContainer";
 import { useSelector } from "react-redux";
 import { Spinner } from "react-bootstrap";
 export const Form = () => {
-  const { status, loading, error } = useSelector((state: any) => state.apiStudent);
+  const { statusAdd, statusWithdraw, loading, error } = useSelector((state: any) => state.apiStudent);
   return (
     <form className={classes.form}>
       <InputItem label="Выберите ученика">
@@ -22,9 +22,10 @@ export const Form = () => {
       ) : (
         <>
           {error ? <div>{error}</div> : (
-            <>{status === 200 && (<div>Умники успешно начислены!</div>)}</>
-          
-
+            <>
+            {statusAdd === 200 && (<div>Умники успешно начислены!</div>)}
+            {statusWithdraw === 200 && (<div>Умники успешно списаны!</div>)}
+            </>
           )}
         </>
       )}

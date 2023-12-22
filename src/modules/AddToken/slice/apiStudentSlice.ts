@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { addBalance } from "../API/addBalance";
+import { withdrawBalance } from "../API/withdrawBalance";
 
 export const AddBalance = createAsyncThunk(
   "apiStudentSlice/ add balance",
@@ -10,8 +11,18 @@ export const AddBalance = createAsyncThunk(
   }
 );
 
+export const Withdraw = createAsyncThunk(
+  "apiStudentSlice/ Withdraw balance",
+  async (params: any) => {
+    const { id, balance, token } = params;
+    const response = await withdrawBalance([...id], balance, token);
+    return response.data;
+  }
+);
+
 export interface IApiStudentSliceState {
-  status: null;
+  statusAdd: null;
+  statusWithdraw: null;
   loading: boolean;
   error: string | null;
 }
@@ -28,13 +39,26 @@ export const apiStudentSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(AddBalance.pending, (state) => {
+        state.statusAdd = null;
+        state.statusWithdraw = null;
         state.loading = true;
       })
       .addCase(AddBalance.fulfilled, (state, action) => {
-        state.status = action.payload.status
+        state.statusAdd = action.payload.status
         state.loading = false;
       })
       .addCase(AddBalance.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message ?? "An error occurred";
+      })
+      .addCase(Withdraw.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(Withdraw.fulfilled, (state, action) => {
+        state.statusWithdraw = action.payload.status
+        state.loading = false;
+      })
+      .addCase(Withdraw.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message ?? "An error occurred";
       });

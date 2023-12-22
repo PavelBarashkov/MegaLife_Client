@@ -3,7 +3,7 @@ import { SubtractBtn } from "../SubtractBtn/SubtractBtn";
 import { Btn } from "../../../../components/UI/Btn/Btn";
 import classes from "./btnsContainer.module.css";
 import { useAppDispatch } from "../../../../redux/hooks/hooks";
-import { AddBalance } from "../../slice/apiStudentSlice";
+import { AddBalance, Withdraw } from "../../slice/apiStudentSlice";
 import { useSelector } from "react-redux";
 
 export const BtnsContainer = () => {
@@ -21,10 +21,20 @@ export const BtnsContainer = () => {
     dispatch(AddBalance(params));
   };
 
+  const handlerwithdrawBtn = (e: any) => {
+    e.preventDefault();
+    const params = {
+      id: selectedUsers,
+      balance: balance,
+      token: localStorage.getItem("token"),
+    };
+    dispatch(Withdraw(params));
+  };
+
   return (
     <div className={classes.container}>
       <Btn onClick={handlerAddBtn}>Начислить</Btn>
-      <SubtractBtn />
+      <SubtractBtn onClick={handlerwithdrawBtn} />
     </div>
   );
 };

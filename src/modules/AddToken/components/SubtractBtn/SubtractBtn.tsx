@@ -1,10 +1,14 @@
 import classes from "./subtractBtn.module.css"
 
-export const SubtractBtn = ({click}:any) => {
+interface ISubtractBtnProps {
+  onClick:(e: any) => void
+}
+
+export const SubtractBtn = ({onClick}:ISubtractBtnProps) => {
 
   return (
     <button 
-        onClick={click}
+        onClick={(e) => onClick(e)}
         className={classes.btn}
     >
         Списать
