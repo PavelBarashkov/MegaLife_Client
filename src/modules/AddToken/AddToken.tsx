@@ -15,7 +15,7 @@ export const AddToken = () => {
 
   return (
     <MainContainer>
-        <Title title={"Начисление/списание умников"} />
+      <Title title={"Начисление/списание умников"} />
       <Form />
     </MainContainer>
   );

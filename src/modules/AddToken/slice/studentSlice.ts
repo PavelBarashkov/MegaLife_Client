@@ -1,11 +1,21 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { getUsers } from "../API/getUsers";
+import { addBalance } from "../API/addBalance";
 
 export const getStudents = createAsyncThunk(
   "Students/ get students",
   async (token: string) => {
     const response = await getUsers(token);
     return response.data;
+  }
+);
+
+export const AddBalance = createAsyncThunk(
+  "Students/ add balance",
+  async (params: any) => {
+    const { id, balance, token } = params;
+        const response = await addBalance([...id], balance, token);
+        return response.data;
   }
 );
 
@@ -50,8 +60,8 @@ export const studentsSlice = createSlice({
       state.selectedUsers = action.payload;
     },
     setBalance: (state, action) => {
-        state.balance = Number(action.payload);
-    }
+      state.balance = Number(action.payload);
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -66,6 +76,7 @@ export const studentsSlice = createSlice({
         state.loading = false;
         state.error = action.payload as string;
       });
+      
   },
 });
 
