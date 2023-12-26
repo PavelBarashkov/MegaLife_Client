@@ -1,20 +1,13 @@
-import { Container } from '../components/UI/Container/Container';
-import { ContainerFrom } from '../components/UI/ContainerForm/ContainerForm';
-import { ContainerDecor } from '../components/UI/ContainerDecor/ContainerDecor';
-import { MainImg } from '../components/UI/MainImg/MainImg';
-import { FormPasswordReset } from '../components/FormPasswordReset/FormPasswordReset';
+import { FormPasswordReset } from "../components/FormPasswordReset/FormPasswordReset";
+import { FirstScreen } from "../components/FirstScreen/FirstScreen";
+import { Form } from "../components/UI/Form/Form";
 
 export const PasswordReset = () => {
-
-    return (
-        <Container>
-            <ContainerFrom>
-                <FormPasswordReset/>
-            </ContainerFrom>
-            <ContainerDecor>
-                <MainImg/>
-            </ContainerDecor>
-        </Container>
-    
-    )
-}
+  return (
+    <FirstScreen>
+      <Form>
+        <FormPasswordReset />
+      </Form>
+    </FirstScreen>
+  );
+};

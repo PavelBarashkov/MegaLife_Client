@@ -4,18 +4,17 @@ import { ContainerDecor } from '../components/UI/ContainerDecor/ContainerDecor';
 import { MainImg } from '../components/UI/MainImg/MainImg';
 import { FormPasswordReset } from '../components/FormPasswordReset/FormPasswordReset';
 import { FormNewPassword } from '../components/FormNewPassword/FormNewPassword';
+import { FirstScreen } from '../components/FirstScreen/FirstScreen';
+import { Form } from '../components/UI/Form/Form';
 
 export const NewPassword = () => {
 
     return (
-        <Container>
-            <ContainerFrom>
+        <FirstScreen>
+            <Form>
                 <FormNewPassword/>
-            </ContainerFrom>
-            <ContainerDecor>
-                <MainImg/>
-            </ContainerDecor>
-        </Container>
+            </Form>
+        </FirstScreen>
     
     )
 }

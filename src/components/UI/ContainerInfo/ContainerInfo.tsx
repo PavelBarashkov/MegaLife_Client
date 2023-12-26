@@ -3,7 +3,7 @@ import classesContainerInfo from './containerInfo.module.css';
 import { IconError } from '../IconError/IconError';
 
 interface IContainerInfoProps {
-    children: React.ReactNode
+    children?: React.ReactNode
     textError?: string
 }
 

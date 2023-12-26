@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Form } from '../UI/Form/FormAuth'
+import { Form } from '../UI/Form/Form'
 import { useAppDispatch } from '../../redux/hooks/hooks';
 import { Logo } from '../UI/Logo/Logo';
 import { TitileForm } from '../UI/TitleForm/TitileForm';
@@ -90,7 +90,7 @@ export const FormAuth = () => {
     })
 
   return (
-        <Form>
+        <>
             <Logo/>
             <TitileForm> Авторизация в MegaLife </TitileForm>
             <MyInput 
@@ -136,6 +136,6 @@ export const FormAuth = () => {
                     Войти
             </MyButton >
             <p  className="form-info">Нажимая кнопку, я соглашаюсь с условиями<br></br> <a href='!#' className='convention'>Пользовательского соглашения</a> </p>
-    </Form>
+    </>
   )
 }
