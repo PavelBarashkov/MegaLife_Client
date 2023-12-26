@@ -9,7 +9,7 @@ export const HeaderMenu = () => {
             <Nav className="me-auto header-menu">
                     <MyNavLink href={'/accounts'} title='Учетные записи'/>
                     <MyNavLink href={ADD_TOKENS} title='Начисление/списание умников'/>
-                    <MyNavLink href={'!#'} title='История начислений/списаний'/>
+                    {/* <MyNavLink href={'!#'} title='История начислений/списаний'/> */}
             </Nav>
             <Nav className="mo-auto">
                 <BtnClose/>

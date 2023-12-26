@@ -10,5 +10,13 @@
 
     padding-top: 24px;
 
-    border-top: 1px solid rgba(234, 236, 240, 1);
+}
+
+.inputs::before {
+    content: '';
+    position: absolute;
+    top: 450px;
+    height: 1px;
+    width: 800px;
+    background-color: rgba(234, 236, 240, 1);
 }

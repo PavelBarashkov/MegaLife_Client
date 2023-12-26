@@ -29,13 +29,18 @@ export interface IApiStudentSliceState {
 
 const initialState = {
   loading: false,
-  error: '',
+  error: "",
 } as IApiStudentSliceState;
 
 export const apiStudentSlice = createSlice({
   name: "apiStudentSlice",
   initialState,
-  reducers: {},
+  reducers: {
+    resetStatus: (state) => {
+      state.statusAdd = null;
+      state.statusWithdraw = null;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(AddBalance.pending, (state) => {
@@ -44,7 +49,7 @@ export const apiStudentSlice = createSlice({
         state.loading = true;
       })
       .addCase(AddBalance.fulfilled, (state, action) => {
-        state.statusAdd = action.payload.status
+        state.statusAdd = action.payload.status;
         state.loading = false;
       })
       .addCase(AddBalance.rejected, (state, action) => {
@@ -52,10 +57,12 @@ export const apiStudentSlice = createSlice({
         state.error = action.error.message ?? "An error occurred";
       })
       .addCase(Withdraw.pending, (state) => {
+        state.statusAdd = null;
+        state.statusWithdraw = null;
         state.loading = true;
       })
       .addCase(Withdraw.fulfilled, (state, action) => {
-        state.statusWithdraw = action.payload.status
+        state.statusWithdraw = action.payload.status;
         state.loading = false;
       })
       .addCase(Withdraw.rejected, (state, action) => {
@@ -65,6 +72,6 @@ export const apiStudentSlice = createSlice({
   },
 });
 
-export const {} = apiStudentSlice.actions;
+export const { resetStatus } = apiStudentSlice.actions;
 
 export default apiStudentSlice.reducer;

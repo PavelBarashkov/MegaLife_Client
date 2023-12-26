@@ -19,7 +19,6 @@ export const Header = () => {
                 <div>
                     <Btn onClick={handleBtn} icon={plus}>Новая учетная запись</Btn>
                 </div>
-                <input type="text" placeholder='тут будет поиск'/>
             </div>
         </div>
 

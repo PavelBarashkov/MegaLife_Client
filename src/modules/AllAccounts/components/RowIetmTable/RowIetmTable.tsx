@@ -19,7 +19,6 @@ export const RowIetmTable = ({user, handlModal}: any) => {
                             <img src={btn_img} alt="Опции" />
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
-                            <Dropdown.Item href="#/action-1">Редактировать профиль</Dropdown.Item>
                             <Dropdown.Item onClick={() => handlModal(user)} href="#/action-1">Удалить</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>

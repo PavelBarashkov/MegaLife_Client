@@ -102,15 +102,19 @@ export const AddNewUser = () => {
         <Btn onClick={sendForm}>Сохранить</Btn>
         <BtnClose click={resetForm}></BtnClose>
       </ContainerForSend>
-        {loading && (
-            <Spinner/>
-        )}
-        {(!loading && error) && (
-            <div>{error}</div>
-        )}
-        {(!loading && !error) && (
-            <div>{user}</div>
-        )}
+      { loading ? (
+        <Spinner/> ) : (
+          <>
+            {error ? (
+              <div>{error}</div>
+            ) : (
+              <div>{user}</div>
+            )}
+          </>
+        )
+            }
+     
+        
     </MainContainer>
   );
 };

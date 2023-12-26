@@ -6,6 +6,7 @@ import { PasswordReset } from "../pages/PasswordReset";
 import { NewPassword } from "../pages/NewPassword";
 import { CreateNewUser } from "../pages/CreateNewUser";
 import { AddTokens } from "../pages/AddTokens";
+import { ErrorPage } from "../pages/ErrorPage";
 
 interface Path {
     path: string
@@ -29,6 +30,10 @@ export const authRoutes: Path[] = [
         path: ADD_TOKENS,
         element: <AddTokens/>,
     },
+    {
+        path: '/*',
+        element: <ErrorPage/>
+    }
 ];
 
 export const publicRoutes: Path[] = [ 
@@ -46,6 +51,6 @@ export const publicRoutes: Path[] = [
     },
     {
         path: '/*',
-        element: <Auth/>
+        element: <ErrorPage/>
     }
 ];

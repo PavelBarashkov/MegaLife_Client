@@ -18,7 +18,7 @@ export const Table = () => {
   const { users, loading, error } = useSelector((state: any) => state.users);
   const [show, setShow] = useState(false);
   const [user, setUser] = useState({ id: null });
-  const [isdelete, setIsDelete] = useState(false);
+  const [isDelete, setIsDelete] = useState(false);
 
   const handleClose = () => setShow(false);
 
@@ -37,7 +37,7 @@ export const Table = () => {
     }
     setUser({ id: null });
     setShow(false);
-    setIsDelete(!isdelete);
+    setIsDelete(!isDelete);
   };
 
   useEffect(() => {
@@ -49,7 +49,7 @@ export const Table = () => {
         dispatch(getUsers(params));
       }
     }
-  }, [isdelete]);
+  }, [isDelete]);
 
   return (
     <>
